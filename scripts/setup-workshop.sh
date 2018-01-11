@@ -200,8 +200,8 @@ function deploy_nexus() {
 function deploy_guides() {
   oc new-app --name=guides \
     --docker-image=osevg/workshopper:ruby \
-    --env=WORKSHOPS_URLS=https://raw.githubusercontent.com/openshift-roadshow/devops-workshop-guides/master/_devops-workshop.yml \
-    --env=CONTENT_URL_PREFIX=https://raw.githubusercontent.com/openshift-roadshow/devops-workshop-guides/master \
+    --env=WORKSHOPS_URLS=https://raw.githubusercontent.com/azipory/cicd-openshift-workshop-guides/master/_devops-workshop.yml \
+    --env=CONTENT_URL_PREFIX=https://raw.githubusercontent.com/azipory/cicd-openshift-workshop-guides/master \
     --env=OPENSHIFT_URL=$OPENSHIFT_MASTER \
     --env=OPENSHIFT_APPS_HOSTNAME=$OPENSHIFT_APPS_HOSTNAME \
     --env=OPENSHIFT_USER=userX \
@@ -235,11 +235,12 @@ function generate_gogs_users() {
 
   # init cart-service repo
   local _REPO_DIR=/tmp/$(date +%s)-coolstore-microservice
-  local _GITHUB_REPO_NAME=devops-workshop-labs
+#  local _GITHUB_REPO_NAME=devops-workshop-labs
+  local _GITHUB_REPO_NAME=cicd-openshift-workshop-labs
   rm -rf $_REPO_DIR
   mkdir $_REPO_DIR
   cd $_REPO_DIR
-  curl -sL -o ./coolstore.zip https://github.com/openshift-roadshow/$_GITHUB_REPO_NAME/archive/master.zip
+  curl -sL -o ./coolstore.zip https://github.com/azipory/$_GITHUB_REPO_NAME/archive/master.zip
   unzip coolstore.zip
   cd $_GITHUB_REPO_NAME-master/cart-spring-boot
   git init
@@ -293,7 +294,7 @@ function build_coolstore_images() {
   wait_while_empty "Nexus" 600 "oc get ep nexus -o yaml -n $INFRA_PROJECT | grep '\- addresses:'"
 
   # catalog service
-  oc new-app redhat-openjdk18-openshift:1.1~https://github.com/azipory/devops-workshop-labs.git \
+  oc new-app redhat-openjdk18-openshift:1.1~https://github.com/azipory/cicd-openshift-workshop-labs.git \
         --context-dir=catalog-spring-boot \
         --name=catalog \
         --labels=app=coolstore \
@@ -303,7 +304,7 @@ function build_coolstore_images() {
 
 
   # gateway service
-  oc new-app redhat-openjdk18-openshift:1.1~https://github.com/azipory/devops-workshop-labs.git \
+  oc new-app redhat-openjdk18-openshift:1.1~https://github.com/azipory/cicd-openshift-workshop-labs.git \
         --context-dir=gateway-vertx \
         --name=coolstore-gw \
         --labels=app=coolstore \
@@ -311,7 +312,7 @@ function build_coolstore_images() {
   oc cancel-build bc/coolstore-gw -n coolstore-images
 
   # inventory service
-  oc new-app redhat-openjdk18-openshift:1.1~https://github.com/azipory/devops-workshop-labs.git \
+  oc new-app redhat-openjdk18-openshift:1.1~https://github.com/azipory/cicd-openshift-workshop-labs.git \
         --context-dir=inventory-wildfly-swarm \
         --name=inventory \
         --labels=app=coolstore \
@@ -319,7 +320,7 @@ function build_coolstore_images() {
   oc cancel-build bc/inventory -n coolstore-images
 
   # cart service
-  oc new-app redhat-openjdk18-openshift:1.1~https://github.com/azipory/devops-workshop-labs.git \
+  oc new-app redhat-openjdk18-openshift:1.1~https://github.com/azipory/cicd-openshift-workshop-labs.git \
         --context-dir=cart-spring-boot \
         --name=cart \
         --labels=app=coolstore \
@@ -327,7 +328,7 @@ function build_coolstore_images() {
   oc cancel-build bc/cart -n coolstore-images
 
   # web ui
-  oc new-app nodejs:4~https://github.com/azipory/devops-workshop-labs.git \
+  oc new-app nodejs:4~https://github.com/azipory/cicd-openshift-workshop-labs.git \
         --context-dir=web-nodejs \
         --name=web-ui \
         --labels=app=coolstore \
@@ -352,7 +353,7 @@ function build_coolstore_images() {
   oc tag coolstore-images/cart:latest         openshift/coolstore-cart:prod
 
   # add coolstore template
-  oc create -f https://raw.githubusercontent.com/openshift-roadshow/devops-workshop-labs/master/openshift/coolstore-deployment-template.yaml -n openshift
+  oc create -f https://raw.githubusercontent.com/azipory/cicd-openshift-workshop-labs/master/openshift/coolstore-deployment-template.yaml -n openshift
 }
 
 function clean_up() {
