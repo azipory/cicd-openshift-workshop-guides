@@ -1,8 +1,8 @@
-# DevOps Workshop on OpenShift
+# CICD Workshop on OpenShift
 
-The DevOps Workshop provides full-stack and DevOps engineers an introduction to OpenShift and containers and how it can be used to build fully automated end-to-end deployment pipelines using advanced deployments techniques like rolling deploys and blue-green deployment.
+The CICD Workshop provides full-stack and DevOps engineers an introduction to OpenShift and containers and how it can be used to build fully automated end-to-end deployment pipelines using advanced deployments techniques like rolling deploys and blue-green deployment.
 
-The lab application used in this workshop is available at https://github.com/openshift-roadshow/devops-workshop-labs
+The lab application used in this workshop is available at https://github.com/azipory/cicd-openshift-workshop-labs
 
 # Agenda
 * DevOps Introduction
