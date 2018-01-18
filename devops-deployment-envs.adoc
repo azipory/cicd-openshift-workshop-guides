@@ -64,7 +64,7 @@ image::devops-envs-cart-newapp.png[Deploy Cart Service]
 Click on *Show advanced options for source, routes, builds, and deployments* to review advanced options for setting memory and cpu limits, environment variables, scaling and more when deploying an application. In this lab, similar to most development teams a Maven artifact repository (e.g. Sonatype Nexus and Artifactory) is used for managing Maven artifacts. Add the following environment variable under *Build Configuration* to specify the Maven repository manager URL to be used during the build phase:
 
 * Name: `MAVEN_MIRROR_URL`
-* Value: `http://nexus.lab-infra.svc:8081/content/groups/public/`
+* Value: `http://nexus-ocp-workshop.apps.tlv.openshiftworkshop.com/repository/maven-all-public/' 
 
 Note that the Maven repository manager URL is an internal URL and is not accessible externally. Click on *Create* button and then on *Continue to overview*.
 
