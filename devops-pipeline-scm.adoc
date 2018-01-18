@@ -63,8 +63,9 @@ CAUTION: Replace `{{PROJECT_SUFFIX}}` with the number provided to you by the ins
 * Username: `{{GIT_USER}}`
 * Password: `{{GIT_PASSWORD}}`
 
-#Just before pushing make sure the mirror set in settings.xml file at /src/main/config point to your local Nexus at
- `http://nexus-ocp-workshop.apps.tlv.openshiftworkshop.com/repository/maven-all-public/`
+Just before pushing make sure the mirror set in settings.xml file at /src/main/config point to your local Nexus at
+
+`http://nexus-ocp-workshop.apps.tlv.openshiftworkshop.com/repository/maven-all-public/`
 
 [source,shell]
 ----
