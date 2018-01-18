@@ -63,7 +63,7 @@ CAUTION: Replace `{{PROJECT_SUFFIX}}` with the number provided to you by the ins
 * Username: `{{GIT_USER}}`
 * Password: `{{GIT_PASSWORD}}`
 
-Just before pushing make sure the mirror set in settings.xml file at /src/main/config point to your local Nexus at
+Just before pushing your JenkinsFile make sure the mirror set in settings.xml file at /src/main/config point to your local Nexus in order to save build time
 
 `http://nexus-ocp-workshop.apps.tlv.openshiftworkshop.com/repository/maven-all-public/`
 
