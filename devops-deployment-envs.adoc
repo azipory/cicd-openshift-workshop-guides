@@ -65,6 +65,7 @@ Click on *Show advanced options for source, routes, builds, and deployments* to 
 
 * Name: `MAVEN_MIRROR_URL`
 * Value: `http://nexus-ocp-workshop.apps.tlv.openshiftworkshop.com/repository/maven-all-public/`
+* Value: `{{NEXUS_URL}}`
 
 Note that the Maven repository manager URL is an internal URL and is not accessible externally. Click on *Create* button and then on *Continue to overview*.
 
