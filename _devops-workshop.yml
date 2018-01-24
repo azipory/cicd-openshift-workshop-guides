@@ -13,6 +13,7 @@ vars:
   GIT_USER: "userXX"
   GIT_PASSWORD: "openshift3"
   PROJECT_SUFFIX: "XX"
+  NEXUS_URL: "http://nexus-ocp-workshop.apps.test.ocplab-tlv.com"
   
 modules:
   activate:
