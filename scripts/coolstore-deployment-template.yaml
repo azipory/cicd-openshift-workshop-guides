@@ -270,7 +270,7 @@ objects:
           livenessProbe:
             failureThreshold: 10
             httpGet:
-              path: /node§
+              path: /node
               port: 8080
               scheme: HTTP
             initialDelaySeconds: 60
