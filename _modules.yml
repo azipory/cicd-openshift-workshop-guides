@@ -2,7 +2,9 @@ modules:
   devops-intro:
     name: DevOps Introduction
   devops-explore-openshift:
-    name: Explore OpenShift
+    name: Preparing Your Environment
+  devops-openshift-cli-web
+    name: Explore The Openshift Web Console & CLI
   devops-deployment-envs:
     name: Deployment Environments
   devops-simple-pipeline:
