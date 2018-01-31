@@ -45,7 +45,7 @@ $ oc project explore-{{PROJECT_SUFFIX}}
 Now using project "explore-{{PROJECT_SUFFIX}}" on server "{{OPENSHIFT_URL}}".
 ----
 
-#### OpenShift Web Console
+#### Exploring the Web Console
 
 OpenShift ships with a web-based console that will allow users to perform various tasks via a browser. To get a feel for how the web console works, open your browser and go to the following URL: {{OPENSHIFT_URL}}
 
