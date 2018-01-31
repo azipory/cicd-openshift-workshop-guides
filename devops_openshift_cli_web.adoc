@@ -1,5 +1,7 @@
-#### Exploring the CLI
+## The Openshift Web Console and CLI
 
+
+#### Exploring the CLI
 In order to login, you can use the `oc` command and then specify the server that you want to authenticate to. Issue the following command:
 
 [source,shell]
