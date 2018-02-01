@@ -50,7 +50,7 @@ Now using project "explore-{{PROJECT_SUFFIX}}" on server "{{OPENSHIFT_URL}}".
  
 OpenShift ships with a web-based console that will allow users to perform various tasks via a browser. To get a feel for how the web console works, open your browser and go to the following URL: 
 
-*link: {{OPENSHIFT_URL}} *
+*link: {{OPENSHIFT_URL}}[]*
 
 Since the security certificates used for securing your OpenShift cluster are self-generated and self-signed, your browser will not trust them by default and will show a security warning similar to the following:
 
