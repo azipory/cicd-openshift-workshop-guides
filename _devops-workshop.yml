@@ -19,7 +19,7 @@ modules:
   activate:
   - devops-intro
   - devops-explore-openshift
-  - devops_openshift_cli_web
+  - devops-openshift-cli-web
   - devops-deployment-envs
   - devops-simple-pipeline
   - devops-pipeline-scm
