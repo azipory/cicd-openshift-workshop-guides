@@ -40,9 +40,9 @@ CAUTION: Replace `{{PROJECT_SUFFIX}}` with the number provided to you by the ins
 [source,shell]
  ----
  $ oc project explore-{{PROJECT_SUFFIX}}
- 
+ ----
+
 Now using project "explore-{{PROJECT_SUFFIX}}" on server "{{OPENSHIFT_URL}}".
-----
  
 ## OpenShift Web Console
  
