@@ -40,9 +40,9 @@ When using OpenShift CLI, you can specify in which project the command should be
 CAUTION: Replace `{{PROJECT_SUFFIX}}` with the number provided to you by the instructor.
 
 [source,bash]
- ----
- $ oc project explore-{{PROJECT_SUFFIX}}
- ----
+----
+$ oc project explore-{{PROJECT_SUFFIX}}
+----
 
 Now using project "explore-{{PROJECT_SUFFIX}}" on server "{{OPENSHIFT_URL}}".
  
