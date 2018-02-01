@@ -26,7 +26,7 @@ modules:
       DOWNLOAD_CLIENT_LIN32:
       DOWNLOAD_CLIENT_LIN64:
       OC_VERSION:
-  devops_openshift_cli_web:
+  devops-openshift-cli-web:
     name: Explore The Openshift Web Console & CLI
     vars:
       OPENSHIFT_URL:
