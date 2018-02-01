@@ -27,7 +27,7 @@ modules:
       DOWNLOAD_CLIENT_LIN64:
       OC_VERSION:
   devops-openshift-cli-web:
-    name: Explore The Openshift Web Console & CLI
+    name: The Openshift Web Console & CLI - Logging In
   devops-deployment-envs:
     name: Deployment Environments
   devops-simple-pipeline:
