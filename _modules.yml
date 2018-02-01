@@ -28,6 +28,8 @@ modules:
       OC_VERSION:
   devops_openshift_cli_web:
     name: Explore The Openshift Web Console & CLI
+    vars:
+      OPENSHIFT_URL:
   devops-deployment-envs:
     name: Deployment Environments
   devops-simple-pipeline:
