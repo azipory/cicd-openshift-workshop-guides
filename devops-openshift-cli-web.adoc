@@ -30,7 +30,7 @@ Now you can create a project:
  
 CAUTION: Replace `{{PROJECT_SUFFIX}}` with the number provided to you by the instructor.
  
-[source,shell]
+[source,bash]
 ----
 $ oc new-project explore-{{PROJECT_SUFFIX}}
 ----
