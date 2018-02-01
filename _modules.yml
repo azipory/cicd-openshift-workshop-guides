@@ -32,6 +32,7 @@ modules:
       OPENSHIFT_URL:
       OPENSHIFT_USER:
       OPENSHIFT_PASSWORD:
+      PROJECT_SUFFIX:
   devops-deployment-envs:
     name: Deployment Environments
   devops-simple-pipeline:
