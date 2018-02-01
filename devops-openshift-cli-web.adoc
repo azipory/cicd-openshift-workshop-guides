@@ -21,19 +21,19 @@ Password: `{{OPENSHIFT_PASSWORD}}`
 
 Projects are a top level concept to help you organize your deployments. An OpenShift project allows a community of users (or a user) to organize and manage their content in isolation from other communities. Each project has its own resources, policies (who can or cannot perform actions), and constraints (quotas and limits on resources, etc). Projects act as a "wrapper" around all the application services and endpoints you (or your teams) are using for your work. You can see the list of projects you have access to using the following command:
  
- [source,bash]
- ----
- $ oc get projects
- ----
+[source,bash]
+----
+$ oc get projects
+----
  
- Now you can create a project:
+Now you can create a project:
  
- CAUTION: Replace `{{PROJECT_SUFFIX}}` with the number provided to you by the instructor.
+CAUTION: Replace `{{PROJECT_SUFFIX}}` with the number provided to you by the instructor.
  
- [source,shell]
- ----
- $ oc new-project explore-{{PROJECT_SUFFIX}}
- ----
+[source,shell]
+----
+$ oc new-project explore-{{PROJECT_SUFFIX}}
+----
  
 When using OpenShift CLI, you can specify in which project the command should be executed using the `-n` switch. If not specified, OpenShift will run the command in the active project. You can switch between active projects using the `oc project` command:
 
