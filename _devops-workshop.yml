@@ -13,7 +13,7 @@ vars:
   GIT_USER: "userXX"
   GIT_PASSWORD: "openshift3"
   PROJECT_SUFFIX: "XX"
-  NEXUS_URL: "http://nexus-ocp-workshop.apps.cicdopenshift.redhat-tlv.com"
+  NEXUS_URL: "http://nexus.ocp-workshop.svc.cluster.local:8081/content/groups/public/"
   
 modules:
   activate:
