@@ -87,4 +87,7 @@ $ oc cancel-build bc/cart-pipeline-git
 Click on *Builds -> Pipelines* on the left sidebar menu and then click on *Start Pipeline* button on the right side of 
 the *cart-pipeline-git*. A new instance of the pipeline starts running using your Jenkinsfile in the Git repository.
 
+*The Build process will most probably fail. This is where some Jenkins maven slave configuration should be done.
+ Your instructor will show this to you*
+
 image::devops-pipeline-scm-started.png[Pipeline from Git Repository]
