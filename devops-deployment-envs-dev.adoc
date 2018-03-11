@@ -1,6 +1,6 @@
 ## Deployment Environments
 
-In this lab you will learn about deployment environments in software delivery lifecycle and deploy the application into these deployment environments.
+In the following two labs you will learn about deployment environments in software delivery lifecycle and deploy the application into these deployment environments.
 
 #### Background
 A deployment environment describes a distinct space for an application to run during a particular stage of a CI/CD pipeline. Typical environments include development, test, stage, and production, for example. In this lab you will create _Dev_ and _Prod_ deployment environments for the CoolStore application which is deployed throughout this session:
