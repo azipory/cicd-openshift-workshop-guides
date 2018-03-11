@@ -35,6 +35,7 @@ You can list the available default Instant App and Quickstart templates with:
 ----
 $ oc get templates -n openshift
 ----
+
 You can create a list of objects from a template using the CLI or, if a template has been uploaded to your project or the global template library, using the web console.
 
 ## Uploading the CoolStore Templates
@@ -43,6 +44,7 @@ If you have a JSON or YAML file that defines a template, you can upload the temp
 ----
 $ oc create -f https://raw.githubusercontent.com/azipory/cicd-openshift-workshop-labs/master/openshift/coolstore-deployment-template.yaml -n openshift
 ----
+
 The CoolStore template is now available for selection using the web console or the CLI.
 
 let’s deploy the CoolStore application, into the Production environment.
