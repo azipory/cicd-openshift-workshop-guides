@@ -1,5 +1,4 @@
-## Deployment Environments
-
+## Deployment Environments - Cont'd
 
 In this lab, you will create the Production environment and deploy the ready-made CoolStore application into this environment.
 
@@ -26,9 +25,11 @@ By default, the current user who created the project is the _admin_ for this pro
 image::devops-envs-dev-membership.png[Project Access Control]
 
 #### Templates
-Now, in order to deploy the CoolStore application we use Templates.
+Now, in order to deploy the CoolStore application we will use a Template.
 A template describes a set of objects that can be parameterized and processed to produce a list of objects for creation by OpenShift Container Platform.
 OpenShift Container Platform provides a number of default Instant Apps and Quickstart templates to make it easy to quickly get started creating a new application for different languages.
+You can create a list of objects from a template using the CLI or, if a template has been uploaded to your project or the global template library, using the web console.
+
 
 You can list the available default Instant App and Quickstart templates with:
 [source,shell]
@@ -36,9 +37,7 @@ You can list the available default Instant App and Quickstart templates with:
 $ oc get templates -n openshift
 ----
 
-You can create a list of objects from a template using the CLI or, if a template has been uploaded to your project or the global template library, using the web console.
-
-## Uploading the CoolStore Templates
+#### Uploading the CoolStore Template
 If you have a JSON or YAML file that defines a template, you can upload the template to projects using the CLI as follows:
 [source,shell]
 ----
@@ -46,15 +45,19 @@ $ oc create -f https://raw.githubusercontent.com/azipory/cicd-openshift-workshop
 ----
 
 The CoolStore template is now available for selection using the web console or the CLI.
+Before we deploy the application let's take a look at the parameters of this template.
 
-let’s deploy the CoolStore application, into the Production environment.
+[source,shell]
+----
+oc get template coolstore -n openshift -o yaml
+----
 
 
-OpenShift introduces a mechanism called {{OPENSHIFT_DOCS_BASE}}/architecture/core_concepts/builds_and_image_streams.html#source-build[Source-to-Image (S2I)] which is a tool for building docker container images. It produces ready-to-run images by injecting application source into a container image and assembling a new image. The new image incorporates the application runtime base image and built source code and is ready to use with the docker run command. The application base runtime might be various language runtimes such as Java, Ruby, NodeJS, Python, etc or middleware runtimes such as Apache Tomcat, JBoss EAP, etc.
 
-S2I can also take application binaries such as JAR, WAR or EAR files as input and build a new docker image for the application combined with the application runtime.
+let’s deploy the CoolStore application, using the uploaded template, into the Production environment.
 
-If you already have a process in-place for building docker images, OpenShift allows you to point to the ready docker images and deploy them as is on the platform.
+
+
 
 In this lab, you will use the S2I mechanism for building the Cart service from source code. Since Cart service is based on Spring Boot, you only need the Java language runtime for running this service and therefore you will use the certified OpenJDK application runtime which is provided in OpenShift out-of-the-box. Click on *Add to project* button to open the service catalog. The catalog shows the list of available language and application runtimes as well as templates. A template describes how to build, configure and deploy a set of containers in a reproducible manner. OpenShift templates simplify composing complex multi-container applications and makes it easy to recreate and configure complete applications from scratch by deploying a template.
 
