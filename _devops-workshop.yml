@@ -14,13 +14,14 @@ vars:
   GIT_PASSWORD: "openshift3"
   PROJECT_SUFFIX: "XX"
   NEXUS_URL: "http://nexus.ocp-workshop.svc.cluster.local:8081/content/groups/public/"
-  
+
 modules:
   activate:
   - devops-intro
   - devops-explore-openshift
   - devops-openshift-cli-web
-  - devops-deployment-envs
+  - devops-deployment-envs-dev
+  - devops-deployment-envs-prod
   - devops-simple-pipeline
   - devops-pipeline-scm
   - devops-promotion
