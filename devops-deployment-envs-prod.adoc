@@ -1,32 +1,23 @@
 ## Deployment Environments
 
-In this lab you will learn about deployment environments in software delivery lifecycle and deploy the application into these deployment environments.
 
-#### Background
-A deployment environment describes a distinct space for an application to run during a particular stage of a CI/CD pipeline. Typical environments include development, test, stage, and production, for example. In this lab you will create _Dev_ and _Prod_ deployment environments for the CoolStore application which is deployed throughout this session:
-
-* _Dev Environment_: this environment is used during development of the Cart service and every change made by developers gets deployed into this environment. Other services e.g. Cart and Inventory would have also their own dedicated _Dev_ environments which allows the developers to write code and test their service without disrupting other teams. If the changes made pass the automated tests, the code will be deployed into the _Prod_ environment.
-* _Production Environment_: the live environment for the entire _CoolStore_ webshop with all services deployed and serving requests to customers. Any interruption in this environment would directly affect the customers.
-
-A _Project_ in OpenShift is a mechanism to scope applications in a cluster and is the central vehicle by which access to resources is managed. A project allows users to organize and manage their applications in isolation from other users. Users must be given access to projects by administrators, or if allowed to create projects, automatically have access to their own projects. Granular access control and network traffic policies for projects in OpenShift makes them a suitable way for modeling deployment environments that fulfil the collaboration, networking and isolation requirements.
-
-In this lab, you will create the _Dev_ deployment environment and deploy the Cart service into this environment. _Cart_ service is developed in Java using the Spring Boot framework.
+In this lab, you will create the Production environment and deploy the ready-made CoolStore application into this environment.
 
 In the current lab, in order for you to become familiar with both the OpenShift Web Console and the OpenShift command line interface (CLI), every step is explained via both the Web Console and CLI which you can choose based on your preferences. Either way leads to the exact same result.
-Let’s start with with creating the _Dev_ deployment environment and deploying the Cart service.
+Let’s start with with creating the _Prod_ deployment environment and deploying the CoolStore application.
 
 #### Create Project via OpenShift Web Console
 
-In OpenShift Web Console, click on the *New Project* button in order to create a new project, enter the following details and click on *Create* button:
+In OpenShift Web Console, click on the *New Project* button again in order to create a new project, enter the following details and click on *Create* button:
 
 CAUTION: Replace `{{PROJECT_SUFFIX}}` with the number provided to you by the instructor.
 
 * Name: `dev-{{PROJECT_SUFFIX}}`
-* Display Name: `Cart Dev`
+* Display Name: `CoolStore Production`
 
 image::devops-envs-create-dev.png[Create Dev Project]
 
-The Dev deployment project for the Cart service is created now and is ready for the Cart service to be deployed. 
+The Prod deployment project for the CoolStore application is created now and is ready for the application to be deployed.
 
 image::devops-envs-dev-project.png[Dev Project]
 
@@ -34,11 +25,27 @@ By default, the current user who created the project is the _admin_ for this pro
 
 image::devops-envs-dev-membership.png[Project Access Control]
 
-Now, let’s deploy the Spring Boot application, Cart service, into the Dev environment. OpenShift supports deploying containerized apps in three different ways and allows developer to pick the process that is most suitable for their projects:
+#### Templates
+Now, in order to deploy the CoolStore application we use Templates.
+A template describes a set of objects that can be parameterized and processed to produce a list of objects for creation by OpenShift Container Platform.
+OpenShift Container Platform provides a number of default Instant Apps and Quickstart templates to make it easy to quickly get started creating a new application for different languages.
 
-* From application source code
-* From application binary (e.g. app.jar)
-* From docker images
+You can list the available default Instant App and Quickstart templates with:
+[source,shell]
+$ oc get templates -n openshift
+
+You can create a list of objects from a template using the CLI or, if a template has been uploaded to your project or the global template library, using the web console.
+
+## Uploading the CoolStore Templates
+If you have a JSON or YAML file that defines a template, you can upload the template to projects using the CLI as follows:
+[source,shell]
+----
+$ oc create -f https://raw.githubusercontent.com/azipory/cicd-openshift-workshop-labs/master/openshift/coolstore-deployment-template.yaml -n openshift
+
+The CoolStore template is now available for selection using the web console or the CLI.
+
+let’s deploy the CoolStore application, into the Production environment.
+
 
 OpenShift introduces a mechanism called {{OPENSHIFT_DOCS_BASE}}/architecture/core_concepts/builds_and_image_streams.html#source-build[Source-to-Image (S2I)] which is a tool for building docker container images. It produces ready-to-run images by injecting application source into a container image and assembling a new image. The new image incorporates the application runtime base image and built source code and is ready to use with the docker run command. The application base runtime might be various language runtimes such as Java, Ruby, NodeJS, Python, etc or middleware runtimes such as Apache Tomcat, JBoss EAP, etc.
 
