@@ -205,8 +205,8 @@ function deploy_guides() {
 
   oc new-app --name=guides \
     --docker-image=osevg/workshopper:ruby \
-    --env=WORKSHOPS_URLS=https://raw.githubusercontent.com/azipory/cicd-openshift-workshop-guides/master/_devops-workshop.yml \
-    --env=CONTENT_URL_PREFIX=https://raw.githubusercontent.com/azipory/cicd-openshift-workshop-guides/master \
+    --env=WORKSHOPS_URLS=https://raw.githubusercontent.com/azipory/cicd-openshift-workshop-guides/development/_devops-workshop.yml \
+    --env=CONTENT_URL_PREFIX=https://raw.githubusercontent.com/azipory/cicd-openshift-workshop-guides/development \
     --env=OPENSHIFT_URL=$OPENSHIFT_MASTER \
     --env=OPENSHIFT_APPS_HOSTNAME=$OPENSHIFT_APPS_HOSTNAME \
     --env=OPENSHIFT_USER=userX \
@@ -358,7 +358,7 @@ function build_coolstore_images() {
   oc tag coolstore-images/cart:latest         openshift/coolstore-cart:prod
 
   # add coolstore template
-  oc create -f https://raw.githubusercontent.com/azipory/cicd-openshift-workshop-labs/master/openshift/coolstore-deployment-template.yaml -n openshift
+  # oc create -f https://raw.githubusercontent.com/azipory/cicd-openshift-workshop-labs/master/openshift/coolstore-deployment-template.yaml -n openshift
 }
 
 function clean_up() {
