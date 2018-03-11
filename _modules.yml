@@ -28,16 +28,18 @@ modules:
       OC_VERSION:
   devops-openshift-cli-web:
     name: The Openshift Web Console & CLI - Logging In
-  devops-deployment-envs:
-    name: Deployment Environments
+  devops-deployment-envs-dev:
+    name: Setup for Development - STI
+  devops-deployment-envs-prod:
+    name: Setup for Production - Templates
   devops-simple-pipeline:
     name: Creating a Simple CI/CD Pipeline
     requires:
-      - devops-deployment-envs
+      - devops-deployment-envs-dev
   devops-pipeline-scm:
     name: Pipeline Definition as Code
     requires:
-      - devops-deployment-envs
+      - devops-deployment-envs-dev
   devops-promotion:
     name: Application Promotion Between Environments
     requires:
