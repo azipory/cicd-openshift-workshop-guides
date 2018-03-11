@@ -20,7 +20,8 @@ modules:
   - devops-intro
   - devops-explore-openshift
   - devops-openshift-cli-web
-  - devops-deployment-envs
+  - devops-deployment-envs-dev
+  - devops-deployment-envs-prod
   - devops-simple-pipeline
   - devops-pipeline-scm
   - devops-promotion
