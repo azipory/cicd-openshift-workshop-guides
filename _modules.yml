@@ -30,8 +30,6 @@ modules:
     name: The Openshift Web Console & CLI - Logging In
   devops-deployment-envs-dev:
     name: Setup Development Env. - STI
-  devops-deployment-envs-prod:
-    name: Setup Production Env. - Templates
   devops-simple-pipeline:
     name: Creating a Simple CI/CD Pipeline
     requires:
@@ -40,6 +38,8 @@ modules:
     name: Pipeline Definition as Code
     requires:
       - devops-deployment-envs-dev
+  devops-deployment-envs-prod:
+    name: Setup Production Env. - Templates
   devops-promotion:
     name: Application Promotion Between Environments
     requires:
