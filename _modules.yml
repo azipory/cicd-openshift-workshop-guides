@@ -29,9 +29,9 @@ modules:
   devops-openshift-cli-web:
     name: The Openshift Web Console & CLI - Logging In
   devops-deployment-envs-dev:
-    name: Setup for Development - STI
+    name: Setup Development Env. - STI
   devops-deployment-envs-prod:
-    name: Setup for Production - Templates
+    name: Setup Production Env. - Templates
   devops-simple-pipeline:
     name: Creating a Simple CI/CD Pipeline
     requires:
