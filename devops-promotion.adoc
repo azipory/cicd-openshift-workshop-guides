@@ -11,7 +11,7 @@ So we have our development and production environments all setup by now:
 image::devops-promotion-envs.png[Environments]
 
 
-#### Automated Application Promotion
+#### Manual Application Promotion
 
 In order to promote the Cart container image from _Dev_ environment to _Prod_ environment, you can use the `oc tag` CLI command:
 

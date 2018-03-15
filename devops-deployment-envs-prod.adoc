@@ -70,8 +70,7 @@ provide a value for.
 
 Now let’s deploy our CoolStore application, using the uploaded template, into the Production environment.
 Specify the Hostname Suffix with replacing your OpenShift master IP address in the following:
-
-prod-X.apps.cicdopenshift.redhat-tlv.com
+`prod-X.apps.cicdopenshift.redhat-tlv.com`
 
 
 image::devops-env-prod-template-param-change.png[Template Parameter]
