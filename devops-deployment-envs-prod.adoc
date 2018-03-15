@@ -52,10 +52,11 @@ The CoolStore template is now available for selection using the web console or t
 image::devops-env-prod-template.png[Production Template]
 
 Before we deploy the application let's take a look at the template.
+You can see the images that are used to deploy this template.
 
 image::devops-env-prod-template-info.png[Production Template Info]
 
-You can see the images that are used to deploy this template.
+
 
 Using the command line let explore the parameters required for this template.
 
@@ -64,4 +65,16 @@ Using the command line let explore the parameters required for this template.
 oc get template coolstore -n openshift -o yaml
 ----
 
-let’s deploy the CoolStore application, using the uploaded template, into the Production environment.
+Browse through the parameters and spot those which value is required and pre-populated and those which are required and the used should
+provide a value for.
+
+Now let’s deploy our CoolStore application, using the uploaded template, into the Production environment.
+Specify the Hostname Suffix with replacing your OpenShift master IP address in the following:
+
+prod-X.apps.cicdopenshift.redhat-tlv.com
+
+
+image::devops-env-prod-template-param-change.png[Template Parameter]
+You will notice that all services are deployed in _Prod_ environment except the Cart service. That is because the Cart service is currently deployed in the Dev environment and its container image is not promoted to the _Prod_ environment yet. You will do that in this lab.
+
+image::devops-promotion-coolstore-deployed.png[CoolStore Webshop Containers]
