@@ -20,11 +20,11 @@ CAUTION: Replace `{{PROJECT_SUFFIX}}` with the number provided to you by the ins
 * Name: `prod-{{PROJECT_SUFFIX}}`
 * Display Name: `CoolStore Production`
 
-image::devops-env-create-prod.png[Create Dev Project]
+image::devops-env-create-prod.png[Create Production Project]
 
 The Prod deployment project for the CoolStore application is created now and is ready for the application to be deployed.
 
-image::devops-env-prod-project.png[Dev Project]
+image::devops-env-prod-project.png[Production Project]
 
 
 #### Templates
@@ -49,11 +49,11 @@ $ oc create -f https://raw.githubusercontent.com/azipory/cicd-openshift-workshop
 
 The CoolStore template is now available for selection using the web console or the CLI.
 
-image::devops-env-prod-template.png
+image::devops-env-prod-template.png[Production Template]
 
 Before we deploy the application let's take a look at the template.
 
-image::devops-env-prod-template-info.png
+image::devops-env-prod-template-info.png[Production Template Info]
 
 You can see the images that are used to deploy this template.
 
