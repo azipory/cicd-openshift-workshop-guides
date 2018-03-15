@@ -5,6 +5,7 @@ In this lab, you will create the Production environment and deploy the ready-mad
 In the current lab, in order for you to become familiar with both the OpenShift Web Console and the OpenShift command line interface (CLI), every step is explained via both the Web Console and CLI which you can choose based on your preferences. Either way leads to the exact same result.
 Let’s create the _Prod_ deployment environment and deploy the CoolStore application.
 
+
 The steps for this are as follows:
 * Create the production project space
 * Upload the Coolstore application template
@@ -33,7 +34,7 @@ OpenShift Container Platform provides a number of default Instant Apps and Quick
 You can create a list of objects from a template using the CLI or, if a template has been uploaded to your project or the global template library, using the web console.
 
 
-You can list the available default Instant App and Quickstart templates with:
+You can list the available templates, Instant App and Quickstart templates in the global template library with:
 [source,shell]
 ----
 $ oc get templates -n openshift
@@ -47,6 +48,7 @@ $ oc create -f https://raw.githubusercontent.com/azipory/cicd-openshift-workshop
 ----
 
 The CoolStore template is now available for selection using the web console or the CLI.
+
 image::devops-env-prod-template.png
 
 Before we deploy the application let's take a look at the template.
