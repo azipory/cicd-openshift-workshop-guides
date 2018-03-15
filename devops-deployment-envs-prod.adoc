@@ -4,9 +4,10 @@ In this lab, you will create the Production environment and deploy the ready-mad
 
 In the current lab, in order for you to become familiar with both the OpenShift Web Console and the OpenShift command line interface (CLI), every step is explained via both the Web Console and CLI which you can choose based on your preferences. Either way leads to the exact same result.
 Let’s create the _Prod_ deployment environment and deploy the CoolStore application.
-The steps are as follows:
+
+The steps for this are as follows:
 * Create the production project space
-* Upload the Coolstore application templates
+* Upload the Coolstore application template
 * Use the CoolStore template to launch the application
 
 #### Create Project via OpenShift Web Console
@@ -50,9 +51,10 @@ image::devops-env-prod-template.png
 
 Before we deploy the application let's take a look at the template.
 
-image:: devops-env-prod-template-info.png
+image::devops-env-prod-template-info.png
 
 You can see the images that are used to deploy this template.
+
 Using the command line let explore the parameters required for this template.
 
 [source,shell]

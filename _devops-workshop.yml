@@ -21,9 +21,9 @@ modules:
   - devops-explore-openshift
   - devops-openshift-cli-web
   - devops-deployment-envs-dev
-  - devops-deployment-envs-prod
   - devops-simple-pipeline
   - devops-pipeline-scm
+  - devops-deployment-envs-prod
   - devops-promotion
   - devops-webhook
   - devops-zerodowntime-manual
